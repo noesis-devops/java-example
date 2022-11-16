@@ -78,7 +78,7 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">JSP Demo - 15/11/2022</span>
+                        <span class="name">JSP Demo - 16/11/2022</span>
                         <hr class="star-light">
                         <span class="skills">Noesis</span>
                     </div>
