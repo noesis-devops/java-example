@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <name>jspsample</name>
   <description>
-test2</description>
+test3</description>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
