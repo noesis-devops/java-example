@@ -15,8 +15,8 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: shell
-    image: ubuntu
+  - name: maven
+    image: maven:3.6.3-jdk-8
     resourceRequestMemory: '1000Mi'
     resourceLimitMemory: '2000Mi'
     command:
@@ -28,7 +28,7 @@ spec:
             // container('shell') {
             //     sh 'hostname'
             // }
-            defaultContainer 'shell'
+            defaultContainer 'maven'
         }
     }
     stages {
