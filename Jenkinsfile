@@ -1,17 +1,7 @@
-// Uses Declarative syntax to run commands inside a container.
 pipeline {
   agent {
     kubernetes {
-      // Rather than inline YAML, in a multibranch Pipeline you could use: yamlFile 'jenkins-pod.yaml'
-      // Or, to avoid YAML:
-      // containerTemplate {
-      //     name 'shell'
-      //     image 'ubuntu'
-      //     command 'sleep'
-      //     args 'infinity'
-      // }
-      yaml ''
-      '
+      yaml '''
       apiVersion: v1
       kind: Pod
       spec:
@@ -23,12 +13,7 @@ pipeline {
       command:
         -sleep
       args:
-        -infinity ''
-      '
-      // Can also wrap individual steps:
-      // container('shell') {
-      //     sh 'hostname'
-      // }
+        -infinity '''
       defaultContainer 'maven'
     }
   }
@@ -43,7 +28,7 @@ pipeline {
         script {
           def scannerHome = tool 'SonarScanner';
           nodejs(nodeJSInstallationName: 'node') {
-            withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
+            withSonarQubeEnv('sonarqube') {
               sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true"
             }
           }
@@ -53,7 +38,7 @@ pipeline {
     stage("Quality Gate") {
       steps {
         script {
-          timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
+          timeout(time: 1, unit: 'HOURS') { 
             def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
             if (qg.status != 'OK') {
               error "Pipeline aborted due to quality gate failure: ${qg.status}"
