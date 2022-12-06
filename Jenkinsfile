@@ -12,8 +12,6 @@ spec:
     - sleep
     args:
     - infinity
-    resourceRequestMemory: '4000Mi'  
-    resourceLimitMemory: "4000Mi"
 ''') {
     node {
   stage('SCM') {
