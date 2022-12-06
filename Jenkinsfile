@@ -14,14 +14,15 @@ spec:
     - infinity
 ''') {
     node {
-  tools {nodejs "node"}
   stage('SCM') {
     checkout scm
   }
    stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true"
+    nodejs(nodeJSInstallationName: 'node') {                  
+      withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
+        sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true"
+      }
     }
   }
   stage("Quality Gate"){
