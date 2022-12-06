@@ -27,7 +27,7 @@ pipeline {
           def scannerHome = tool 'SonarScanner';
           nodejs(nodeJSInstallationName: 'node') {
             withSonarQubeEnv('sonarqube') {
-              sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true"
+              sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true -Dsonar.exclusions=WebContent/vendor/*"
             }
           }
         }
