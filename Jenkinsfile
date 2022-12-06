@@ -23,7 +23,7 @@ spec:
     def scannerHome = tool 'SonarScanner';
     nodejs(nodeJSInstallationName: 'node') {                  
       withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-        sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true -Dsonar.javascript.node.maxspace=3000"
+        sh "${scannerHome}/bin/sonar-scanner -Dsonar.log.level=DEBUG -Dsonar.projectKey=java-example -Dsonar.verbose=true -Dsonar.javascript.node.maxspace=2000"
       }
     }
   }
