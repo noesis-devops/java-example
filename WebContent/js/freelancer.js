@@ -1,6 +1,12 @@
 // Freelancer Theme JavaScript
 
 (function($) {
+
+    var k;
+    var b = true;
+    while (b) {
+        k++;
+    }
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
