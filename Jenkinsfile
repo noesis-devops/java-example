@@ -18,11 +18,10 @@ spec:
     checkout scm
   }
    stage('SonarQube analysis') {
-    def mvn = tool 'maven-3.8.6';
-    withSonarQubeEnv('sonarqube') {
-      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java-example"
-    }
+    def scannerHome = tool 'SonarScanner';
+    withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
+      sh "${scannerHome}/bin/sonar-scanner"
     }
   }
 }
-
+}
