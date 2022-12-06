@@ -12,7 +12,7 @@ spec:
     - sleep
     args:
     - infinity
-    resourceRequestMemory: '1000Mi',    
+    resourceRequestMemory: '1000Mi'  
     resourceLimitMemory: "2000Mi"
 ''') {
     node {
