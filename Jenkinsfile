@@ -14,6 +14,7 @@ spec:
     - infinity
 ''') {
     node {
+  tools {nodejs "node"}
   stage('SCM') {
     checkout scm
   }
