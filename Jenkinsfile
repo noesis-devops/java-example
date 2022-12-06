@@ -20,7 +20,7 @@ spec:
    stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner"
+      sh "${scannerHome}/bin/sonar-scanner sonar.log.level=DEBUG sonar.projectKey=java-example sonar.verbose=true"
     }
   }
 }
