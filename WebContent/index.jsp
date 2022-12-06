@@ -54,6 +54,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a hreff="#page-top"></a>
+                        <b>cenas</b>
                     </li>
                     <li class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
