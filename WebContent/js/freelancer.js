@@ -2,11 +2,6 @@
 
 (function($) {
 
-    var k;
-    var b = true;
-    while (b) {
-        k++;
-    }
     "use strict"; // Start of use strict
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -48,3 +43,12 @@
     });
 
 })(jQuery); // End of use strict
+
+var k = 0;
+var b = true;
+while (b) {
+    k++;
+    if (k == 1) {
+        b = false
+    }
+}
