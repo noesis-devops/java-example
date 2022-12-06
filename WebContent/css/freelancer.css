@@ -43,7 +43,7 @@ hr.star-primary {
 hr.star-light:after,
 hr.star-primary:after {
   content: "\f005";
-  font-family: Arial;
+  /*font-family: Arial;*/
   display: inline-block;
   position: relative;
   top: -0.8em;
