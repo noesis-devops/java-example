@@ -53,8 +53,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
-                        <a hreff="#page-top"></a>
-                        <b>cenas</b>
+                        <a href="#page-top"></a>
+                        <strong>cenas</strong>
                     </li>
                     <li class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
