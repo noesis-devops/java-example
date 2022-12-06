@@ -48,4 +48,7 @@ var k = 0;
 var b = true;
 while (b) {
     k++;
+    if (k == 1) {
+        b = false
+    }
 }
