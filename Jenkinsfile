@@ -7,7 +7,7 @@ pipeline {
       spec:
         containers:
         -name: maven
-      image: maven: 3.8 .6
+      image: maven: 3.8.6
       resourceRequestMemory: '1000Mi'
       resourceLimitMemory: '2000Mi'
       command:
