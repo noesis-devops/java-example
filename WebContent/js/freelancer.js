@@ -50,7 +50,7 @@ let c = 1 == '1';
 
 while (b) {
     k++;
-    if (k == 1) {
+    /*if (k == 1) {
         b = false
-    }
+    }*/
 }
