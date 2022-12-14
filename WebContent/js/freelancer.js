@@ -46,6 +46,8 @@
 
 var k = 0;
 var b = true;
+let c = 1 == '1';
+
 while (b) {
     k++;
     if (k == 1) {
