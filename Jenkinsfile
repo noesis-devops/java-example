@@ -15,7 +15,6 @@ pipeline {
       defaultContainer 'maven'
     }
   }
-  boolean qualityGateStatus = true
   stages {
     stage('SCM') {
       steps {
@@ -51,9 +50,6 @@ pipeline {
       }
     }
     stage("Deploy") {
-      when {
-        expression { qualityGateStatus == true }
-      }
       steps {
         script {
           println("Fake deploy!")
