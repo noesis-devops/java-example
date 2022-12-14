@@ -45,10 +45,10 @@
 })(jQuery); // End of use strict
 
 let k = 0;
-var b = true;
+let b = true;
 while (b) {
     k++;
-    if (k == 1) {
+    /*if (k == 1) {
         b = false
-    }
+    }*/
 }
