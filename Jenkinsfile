@@ -15,6 +15,7 @@ pipeline {
       defaultContainer 'maven'
     }
   }
+  boolean qualityGateStatus = true
   stages {
     stage('SCM') {
       steps {
@@ -39,11 +40,23 @@ pipeline {
           timeout(time: 1, unit: 'HOURS') { 
             def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
             if (qg.status != 'OK') {
+              qualityGateStatus = false
               error "Pipeline aborted due to quality gate failure: ${qg.status}"
             } else {
+              qualityGateStatus = true
               println("quality gate passed!")
             }
           }
+        }
+      }
+    }
+    stage("Deploy") {
+      when {
+        expression { qualityGateStatus == true }
+      }
+      steps {
+        script {
+          println("Fake deploy!")
         }
       }
     }
