@@ -59,6 +59,5 @@ jobs:
             -Dsonar.projectKey=noesis-devops_java-example
             -Dsonar.organization=noesis-devops
             -Dsonar.projectVersion=1.2
-            #-Dsonar.sources=WebContent
             -Dsonar.projectBaseDir=../../WebContent
             -Dsonar.verbose=true
