@@ -7,6 +7,10 @@
   <name>jspsample</name>
   <description>
 test3</description>
+<properties>
+  <sonar.organization>noesis-devops</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
