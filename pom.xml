@@ -5,8 +5,7 @@
   <version>0.0.2</version>
   <packaging>war</packaging>
   <name>jspsample</name>
-  <description>
-test3</description>
+  <description>dasdasdasdasdas</description>
 <properties>
   <sonar.organization>noesis-devops</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
